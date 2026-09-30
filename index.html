@@ -72,11 +72,10 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
     /* Three-step corporate band */
-    #como{background:#fff}
+    #como{background:var(--blue-soft)}
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .steps article{border-radius:var(--radius);padding:30px;min-height:220px;border:1px solid var(--line);box-shadow:0 9px 26px rgba(7,31,69,.045)}
-    .steps article:nth-child(1),.steps article:nth-child(3){background:var(--orange-soft);border-color:#ffd8b8}
-    .steps article:nth-child(2){background:#fff}
+    .steps article{background:#fff;border-radius:var(--radius);padding:30px;min-height:220px;border:1px solid #d8e6f4;border-top:3px solid var(--orange);box-shadow:0 9px 26px rgba(7,31,69,.045)}
+    .steps article:nth-child(1),.steps article:nth-child(2),.steps article:nth-child(3){background:#fff;border-color:#d8e6f4;border-top-color:var(--orange)}
     .step-number{display:flex;width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-bottom:20px}
     .steps h3{font-size:19px;margin-bottom:10px;font-weight:800}
     .steps p{margin:0;color:var(--muted);font-size:14px}
@@ -86,7 +85,7 @@
     .impact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
     .impact h2{color:#fff;max-width:720px}
     .impact p{color:#d5e1ef;max-width:720px;font-size:17px}
-    .impact-card{background:var(--orange);border-radius:18px;padding:30px;color:#fff;box-shadow:0 18px 45px rgba(0,0,0,.14)}
+    .impact-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:30px;color:#fff;box-shadow:0 18px 45px rgba(0,0,0,.10)}
     .impact-card strong{display:block;font-size:24px;line-height:1.2;margin-bottom:12px}
     .impact-card p{margin:0;color:#fff;font-size:15px}
     .impact-list{display:grid;gap:12px;margin:24px 0 0;padding:0;list-style:none}
@@ -118,8 +117,8 @@
     .quote-points{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:12px}
     .quote-points li{position:relative;padding-left:25px;color:#e6eef8;font-size:14px}
     .quote-points li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
-    .quote-callout{margin-top:24px;padding:17px 18px;border-radius:12px;background:rgba(255,122,26,.12);border:1px solid rgba(255,122,26,.35);color:#fff;font-size:14px}
-    .quote-callout strong{color:#ffb37d}
+    .quote-callout{margin-top:24px;padding:17px 18px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:14px}
+    .quote-callout strong{color:#fff}
 
     /* Forms */
     form{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);color:var(--text)}
@@ -164,11 +163,11 @@
     .minirow img{width:100%;height:175px;object-fit:cover;border-radius:14px}
 
     /* Final CTA */
-    .cta{background:var(--orange);padding:66px 0;text-align:center;color:#fff}
-    .cta h2{color:#fff;font-size:clamp(30px,4vw,44px);margin-bottom:12px}
-    .cta p{color:#fff;max-width:720px;margin:0 auto 24px;font-size:16px}
-    .cta .btn{background:var(--navy)}
-    .cta .btn:hover{background:#04152f}
+    .cta{background:#fff;padding:66px 0;text-align:center;color:var(--ink);border-top:1px solid var(--line)}
+    .cta h2{color:var(--ink);font-size:clamp(30px,4vw,44px);margin-bottom:12px}
+    .cta p{color:var(--muted);max-width:720px;margin:0 auto 24px;font-size:16px}
+    .cta .btn{background:var(--orange)}
+    .cta .btn:hover{background:#e66700}
 
     /* Footer */
     footer{background:#04152f;color:#cbd7e5;padding:48px 0 24px}
@@ -334,7 +333,7 @@
         <div class="actions"><a class="btn" href="#" onclick="return abrirWhatsAppCliente()">PREFIRO FALAR NO WHATSAPP</a></div>
         <ul class="quote-points">
           <li>Horários podem ser aproximados nesta primeira solicitação.</li>
-          <li>Informe embarque e destino com o máximo de clareza possível.</li>
+          <li>Informe os endereços completos de embarque e destino.</li>
           <li>Use observações para bagagens, acessibilidade, paradas ou necessidades especiais.</li>
           <li>A Fretall acompanha o atendimento comercial da solicitação.</li>
         </ul>
@@ -351,13 +350,13 @@
         <div class="formgrid">
           <label>Nome ou empresa *<input required name="nome" autocomplete="name"></label>
           <label>WhatsApp *<input required name="whatsapp" inputmode="tel" placeholder="(11) 99999-9999" class="mask-phone"></label>
-          <label class="full">Local de embarque *<input required name="embarque" placeholder="Endereço, bairro ou cidade"></label>
-          <label class="full">Destino *<input required name="destino" placeholder="Endereço ou cidade de destino"></label>
+          <label class="full">Endereço completo de embarque *<input required name="embarque" placeholder="Rua/Av., número, bairro, cidade e estado"></label>
+          <label class="full">Endereço completo de destino *<input required name="destino" placeholder="Rua/Av., número, bairro, cidade e estado"></label>
           <label>Data da ida *<input required type="date" name="data_ida"></label>
           <label>Horário aproximado da ida *<input required type="time" name="horario_ida"></label>
-          <label>Passageiros *<input required type="number" min="1" name="passageiros" placeholder="Ex.: 32"></label>
           <label>Data de retorno (opcional)<input type="date" name="data_retorno"></label>
           <label>Horário aproximado do retorno (opcional)<input type="time" name="horario_retorno"></label>
+          <label class="full">Quantidade de passageiros *<input required type="number" min="1" name="passageiros" placeholder="Ex.: 32"></label>
           <label class="full">Observações (opcional)<textarea name="observacoes" placeholder="Paradas, bagagens, acessibilidade ou outra informação importante."></textarea></label>
         </div>
 
@@ -457,8 +456,8 @@
 
   <section class="cta">
     <div class="wrap">
-      <h2>Uma solicitação. Mais opções para sua viagem.</h2>
-      <p>Envie os dados da viagem e deixe a Fretall organizar a busca por alternativas de fretamento.</p>
+      <h2>Pronto para solicitar sua cotação?</h2>
+      <p>Preencha os dados da viagem e a Fretall inicia a busca entre empresas parceiras especializadas em fretamento.</p>
       <a class="btn" href="#cotacao">SOLICITAR COTAÇÃO</a>
     </div>
   </section>
