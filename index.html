@@ -44,12 +44,6 @@
     .kicker{margin:0 0 10px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
     .section h2{margin:0;font-size:clamp(31px,4vw,46px);line-height:1.08;font-weight:800}
     .section-intro{margin:15px 0 0;max-width:760px;font-size:17px;color:var(--muted)}
-
-    .topbar{background:var(--navy);color:#fff;font-size:12px}
-    .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:14px;padding-top:7px;padding-bottom:7px}
-    .topbar a{color:#fff;text-decoration:none;font-weight:600}
-    .topbar a:hover{color:#ffab6c}
-    .topbar-sep{opacity:.45}
     header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid rgba(7,31,69,.08);backdrop-filter:blur(10px)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
     .logo{width:142px;height:auto}
@@ -112,6 +106,16 @@
     .cards article div{padding:20px 22px}
     .cards h3{font-size:18px;margin-bottom:6px}
     .cards p{margin:0;color:var(--muted);font-size:13px}
+
+
+    /* Confiança e segurança */
+    .trust-section{background:#f5f8fc}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+    .trust-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 8px 24px rgba(7,31,69,.04)}
+    .trust-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;font-weight:800;margin-bottom:16px}
+    .trust-card h3{font-size:17px;margin:0 0 8px}
+    .trust-card p{margin:0;color:var(--muted);font-size:14px}
+    .trust-note{margin-top:22px;padding:17px 18px;border-left:3px solid var(--orange);background:#fff;border-radius:0 10px 10px 0;color:var(--text);font-size:14px}
 
     /* Quote */
     #cotacao{background:linear-gradient(135deg,var(--navy),#0a3466);color:#fff}
@@ -191,45 +195,81 @@
 
     @media(max-width:960px){
       nav{display:none}
-      .hero{min-height:auto;background-position:center}
+      .hero{min-height:auto;background-position:62% center}
+      .hero::before{background:linear-gradient(90deg,rgba(5,23,53,.97) 0%,rgba(5,23,53,.90) 58%,rgba(5,23,53,.58) 100%)}
       .hero-content{grid-template-columns:1fr}
-      .steps,.cards,.need-grid,.about-grid{grid-template-columns:1fr 1fr}
+      .steps,.cards,.need-grid,.about-grid,.trust-grid{grid-template-columns:1fr 1fr}
       .impact-grid,.two{grid-template-columns:1fr;gap:34px}
       .partner-image{position:static}
       .foot{grid-template-columns:1fr 1fr}
+      .section-intro{font-size:16px}
     }
     @media(max-width:650px){
-      .topbar .wrap{justify-content:center;gap:8px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
-      .topbar{font-size:11px}
-      .wrap{width:min(100% - 28px,1160px)}
-      .section{padding:62px 0}
-      .nav{height:68px}
-      .logo{width:122px}
+      body{font-size:16px;line-height:1.58}
+      .wrap{width:min(100% - 24px,1160px)}
+      .section{padding:52px 0}
+      .section-head{margin-bottom:26px}
+      .section h2{font-size:32px;line-height:1.1}
+      .section-intro{font-size:16px;line-height:1.55}
+      .kicker{font-size:11px}
+      .nav{height:68px;gap:12px}
+      .logo{width:126px}
+      .btn{font-size:13px;padding:14px 18px}
       .btn.small{font-size:11px;padding:11px 12px}
-      .hero-content{padding:58px 0}
-      .hero h1{font-size:48px}
-      .hero-lead{font-size:19px}
+      .hero{background-position:64% center}
+      .hero::before{background:linear-gradient(90deg,rgba(5,23,53,.98) 0%,rgba(5,23,53,.94) 68%,rgba(5,23,53,.72) 100%)}
+      .hero-content{padding:54px 0}
+      .hero h1{font-size:46px;line-height:1}
+      .hero .eyebrow{font-size:11px}
+      .hero-lead{font-size:20px;line-height:1.38}
+      .hero-copy{font-size:16px;line-height:1.55}
+      .hero-benefit{font-size:14px;align-items:flex-start}
       .actions{flex-direction:column;align-items:stretch}
       .actions .btn{width:100%}
-      .steps,.cards,.need-grid,.about-grid,.foot{grid-template-columns:1fr}
+      .steps,.cards,.need-grid,.about-grid,.trust-grid,.foot{grid-template-columns:1fr}
+      .steps article,.need-grid article,.trust-card{padding:22px}
+      .steps h3,.need-grid h3,.trust-card h3{font-size:18px}
+      .steps p,.need-grid p,.trust-card p{font-size:15px}
+      .impact h2{font-size:32px}
+      .impact p{font-size:16px}
+      .impact-card strong{font-size:21px}
+      .cards img{height:210px}
+      .cards h3{font-size:19px}
+      .cards p{font-size:15px}
       .formgrid{grid-template-columns:1fr}
       .formgrid .full{grid-column:auto}
       form{padding:20px}
+      .form-title{font-size:21px}
+      .form-subtitle{font-size:14px}
+      .formgrid label{font-size:13px}
+      input,select,textarea{font-size:16px;padding:13px 14px}
+      textarea{min-height:110px}
       .checkgrid{grid-template-columns:1fr}
+      .checkgrid label{font-size:14px}
+      .form-help,.micro-note{font-size:12px}
+      .quote-points li{font-size:15px}
+      .quote-callout,.trust-note{font-size:14px}
       .partner-image>img{height:245px}
       .minirow img{height:130px}
+      footer{padding-top:42px}
+      .contact-lines a{font-size:14px}
+      .copy{font-size:12px}
+    }
+
+    @media(max-width:420px){
+      .wrap{width:min(100% - 20px,1160px)}
+      .logo{width:112px}
+      .nav{height:64px}
+      .btn.small{font-size:10px;padding:10px}
+      .hero h1{font-size:41px}
+      .hero-lead{font-size:18px}
+      .section h2,.impact h2{font-size:29px}
+      .section{padding:46px 0}
+      form{padding:17px}
     }
   </style>
 </head>
 <body>
-
-<div class="topbar">
-  <div class="wrap">
-    <a href="#" onclick="return abrirWhatsAppGeral()">WhatsApp: (11) 92639-1866</a>
-    <span class="topbar-sep">•</span>
-    <a href="mailto:contato@fretall.com.br">contato@fretall.com.br</a>
-  </div>
-</div>
 
 <header>
   <div class="wrap nav">
@@ -339,6 +379,43 @@
       </div>
     </div>
   </section>
+
+
+  <section class="section trust-section" id="seguranca">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">CONFIANÇA DURANTE A CONTRATAÇÃO</p>
+        <h2>Mais segurança para contratar seu fretamento</h2>
+        <p class="section-intro">Na cotação, a Fretall considera o perfil da viagem e prioriza empresas da nossa base com requisitos compatíveis com a operação.</p>
+      </div>
+
+      <div class="trust-grid">
+        <article class="trust-card">
+          <span class="trust-icon">01</span>
+          <h3>Empresas identificadas</h3>
+          <p>Consultamos empresas cadastradas na base Fretall e adequadas ao perfil da solicitação.</p>
+        </article>
+        <article class="trust-card">
+          <span class="trust-icon">02</span>
+          <h3>Documentação compatível</h3>
+          <p>Autorizações e documentos são considerados conforme o tipo de serviço, trajeto e operação.</p>
+        </article>
+        <article class="trust-card">
+          <span class="trust-icon">03</span>
+          <h3>Transparência antes da reserva</h3>
+          <p>Antes da confirmação, você recebe as informações da empresa responsável e as condições do serviço.</p>
+        </article>
+        <article class="trust-card">
+          <span class="trust-icon">04</span>
+          <h3>Acompanhamento Fretall</h3>
+          <p>Acompanhamos a cotação e os próximos passos comerciais durante o processo.</p>
+        </article>
+      </div>
+
+      <div class="trust-note"><strong>Antes do pagamento da reserva:</strong> confirme os dados da empresa responsável pelo transporte, o serviço contratado, os valores e as condições da viagem.</div>
+    </div>
+  </section>
+
 
   <section id="cotacao" class="section">
     <div class="wrap two">
@@ -516,7 +593,7 @@
   }
 
   function abrirWhatsAppCliente(){
-    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar uma cotação de fretamento. Posso enviar os dados da viagem?');
+    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar uma cotação de fretamento. Posso enviar os dados completos da viagem?');
   }
 
   function abrirWhatsAppGeral(){
@@ -579,7 +656,7 @@
     const btn=document.getElementById('partnerSubmit');
     statusForm('partnerStatus','success','Cadastro recebido. Nossa equipe fará a análise inicial e poderá entrar em contato pelo WhatsApp.');
     btn.disabled=false;
-    btn.textContent='ENVIAR CADASTRO INICIAL';
+    btn.textContent='CADASTRAR EMPRESA PARCEIRA';
     form.reset();
   });
 
