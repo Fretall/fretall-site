@@ -45,6 +45,11 @@
     .section h2{margin:0;font-size:clamp(31px,4vw,46px);line-height:1.08;font-weight:800}
     .section-intro{margin:15px 0 0;max-width:760px;font-size:17px;color:var(--muted)}
 
+    .topbar{background:var(--navy);color:#fff;font-size:12px}
+    .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:14px;padding-top:7px;padding-bottom:7px}
+    .topbar a{color:#fff;text-decoration:none;font-weight:600}
+    .topbar a:hover{color:#ffab6c}
+    .topbar-sep{opacity:.45}
     header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid rgba(7,31,69,.08);backdrop-filter:blur(10px)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
     .logo{width:142px;height:auto}
@@ -171,7 +176,7 @@
 
     /* Footer */
     footer{background:#04152f;color:#cbd7e5;padding:48px 0 24px}
-    .foot{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:50px;align-items:start}
+    .foot{display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:start}
     .footer-brand img{width:145px;margin-bottom:15px}
     .footer-brand p,.footer-col p{font-size:13px;color:#b8c6d7;margin:0}
     .footer-brand strong{display:block;color:#fff;font-size:14px;margin-bottom:7px}
@@ -194,6 +199,8 @@
       .foot{grid-template-columns:1fr 1fr}
     }
     @media(max-width:650px){
+      .topbar .wrap{justify-content:center;gap:8px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+      .topbar{font-size:11px}
       .wrap{width:min(100% - 28px,1160px)}
       .section{padding:62px 0}
       .nav{height:68px}
@@ -215,6 +222,14 @@
   </style>
 </head>
 <body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="#" onclick="return abrirWhatsAppGeral()">WhatsApp: (11) 92639-1866</a>
+    <span class="topbar-sep">•</span>
+    <a href="mailto:contato@fretall.com.br">contato@fretall.com.br</a>
+  </div>
+</div>
 
 <header>
   <div class="wrap nav">
@@ -241,7 +256,6 @@
         <div class="hero-benefit">Economize tempo na busca e compare opções de orçamento.</div>
         <div class="actions">
           <a class="btn" href="#cotacao">SOLICITAR COTAÇÃO</a>
-          <a class="btn ghost" href="#" onclick="return abrirWhatsAppCliente()">FALAR NO WHATSAPP</a>
         </div>
       </div>
     </div>
@@ -263,7 +277,7 @@
         <article>
           <span class="step-number">02</span>
           <h3>A Fretall faz a busca</h3>
-          <p>Consultamos empresas de fretamento que possam atender ao roteiro, à data e ao perfil da sua viagem.</p>
+          <p>Consultamos empresas parceiras da nossa base e buscamos opções compatíveis com o roteiro, a data e o perfil da viagem.</p>
         </article>
         <article>
           <span class="step-number">03</span>
@@ -397,7 +411,7 @@
           <span>Faça um cadastro inicial simples. A equipe Fretall entra em contato quando for necessário avançar na qualificação.</span>
         </div>
 
-        <div class="actions"><a class="btn" href="#" onclick="return abrirWhatsAppParceiro()">QUERO SER PARCEIRO PELO WHATSAPP</a></div>
+        <p class="partner-help"><strong>Dúvidas sobre parceria?</strong> <a href="#" onclick="return abrirWhatsAppParceiro()">Atendimento e informações pelo WhatsApp</a>.</p>
 
         <form id="partnerForm" action="https://script.google.com/macros/s/AKfycbyvHIjCc8B4CvIHUjUkbxg_ByuljO25QnNWNn4xq4LryFpUUj1Tk9f8bKCdvGXaY4P9jQ/exec" method="post" target="partnerSink" onsubmit="return prepararParceiro(this)">
           <p class="form-title">Cadastro inicial de parceiro</p>
@@ -442,9 +456,9 @@
             <label class="full">Observações (opcional)<textarea id="partnerObsLivre" placeholder="Regiões atendidas, serviços ou outras informações importantes."></textarea></label>
           </div>
 
-          <button id="partnerSubmit" type="submit" class="btn fullbtn">ENVIAR CADASTRO INICIAL</button>
+          <button id="partnerSubmit" type="submit" class="btn fullbtn">CADASTRAR EMPRESA PARCEIRA</button>
           <div id="partnerStatus" class="form-status" role="status" aria-live="polite"></div>
-          <div class="form-help"><strong>Prefere falar direto?</strong> <a href="#" onclick="return abrirWhatsAppParceiro()">Fale com a Fretall pelo WhatsApp</a>.</div>
+          <div class="form-help"><strong>Precisa de ajuda?</strong> <a href="#" onclick="return abrirWhatsAppParceiro()">Atendimento e informações pelo WhatsApp</a>.</div>
           <p class="micro-note">O cadastro não garante serviços ou vendas. As oportunidades dependem da demanda e da disponibilidade operacional.</p>
         </form>
       </div>
@@ -455,27 +469,15 @@
       </div>
     </div>
   </section>
-
-  <section class="cta">
-    <div class="wrap">
-      <h2>Pronto para solicitar sua cotação?</h2>
-      <p>Preencha os dados da viagem e a Fretall inicia a busca por opções de fretamento adequadas ao seu roteiro.</p>
-      <a class="btn" href="#cotacao">SOLICITAR COTAÇÃO</a>
-    </div>
-  </section>
 </main>
 
 <footer id="contato">
   <div class="wrap foot">
     <div class="footer-brand">
       <img src="assets/logo.png" alt="Fretall">
-      <strong>Fale com a Fretall</strong>
+      <strong>Atendimento Fretall</strong>
       <div class="contact-lines">
-        <a href="https://wa.me/5511926391866" target="_blank" rel="noopener" aria-label="WhatsApp Fretall">
-          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.72 9.72 0 0 0-8.3 14.78L2.4 21.68l5.02-1.31A9.73 9.73 0 1 0 12.04 2Zm0 17.68a7.87 7.87 0 0 1-4.01-1.1l-.29-.17-2.98.78.8-2.91-.19-.3a7.9 7.9 0 1 1 6.67 3.7Zm4.33-5.91c-.24-.12-1.41-.69-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.09 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.13.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
-          <span>WhatsApp: (11) 92639-1866</span>
-        </a>
-        <a href="mailto:contato@fretall.com.br" aria-label="E-mail Fretall">
+        <a href="#" onclick="return abrirWhatsAppGeral()" aria-label="WhatsApp Fretall">
           <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.72 9.72 0 0 0-8.3 14.78L2.4 21.68l5.02-1.31A9.73 9.73 0 1 0 12.04 2Zm0 17.68a7.87 7.87 0 0 1-4.01-1.1l-.29-.17-2.98.78.8-2.91-.19-.3a7.9 7.9 0 1 1 6.67 3.7Zm4.33-5.91c-.24-.12-1.41-.69-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.09 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.13.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
           <span>WhatsApp: (11) 92639-1866</span>
         </a>
@@ -487,14 +489,10 @@
     </div>
 
     <div class="footer-col">
-      <b>Fretall</b>
-      <p>Solicite cotações de ônibus, micro-ônibus e vans em um só lugar, com atendimento durante o processo.</p>
-    </div>
-
-    <div class="footer-col">
       <b>Navegação</b>
       <div class="contact-lines">
         <a href="#como">Como funciona</a>
+        <a href="#veiculos">Veículos</a>
         <a href="#cotacao">Solicitar cotação</a>
         <a href="#parceiros">Seja parceiro</a>
       </div>
@@ -518,11 +516,15 @@
   }
 
   function abrirWhatsAppCliente(){
-    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar uma cotação de fretamento.');
+    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar uma cotação de fretamento. Posso enviar os dados da viagem?');
+  }
+
+  function abrirWhatsAppGeral(){
+    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de atendimento e informações sobre fretamento.');
   }
 
   function abrirWhatsAppParceiro(){
-    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de saber mais sobre a parceria.');
+    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de receber atendimento e informações sobre a parceria.');
   }
 
   function statusForm(id,tipo,mensagem){
