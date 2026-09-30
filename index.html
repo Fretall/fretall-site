@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fretall | Seu destino, nossa busca.</title>
-  <meta name="description" content="Solicite cotações de ônibus, micro-ônibus e vans. A Fretall conecta sua necessidade de transporte a empresas parceiras de fretamento.">
-  <meta name="theme-color" content="#071F45">
+  <meta name="description" content="Solicite cotação de ônibus, micro-ônibus e vans em uma única solicitação. A Fretall busca empresas parceiras especializadas e reúne opções para sua viagem.">
+  <meta name="theme-color" content="#071f45">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,21 +13,21 @@
   <style>
     :root{
       --navy:#071f45;
-      --navy-2:#0b2f5d;
+      --navy-2:#0b315f;
       --navy-3:#123f76;
       --orange:#ff7a1a;
-      --orange-dark:#e9670b;
-      --ink:#0a2346;
-      --text:#334760;
-      --muted:#67788c;
-      --line:#dce5ef;
-      --soft:#f4f8fc;
-      --soft-blue:#eaf2fb;
-      --white:#ffffff;
+      --orange-dark:#e5680c;
+      --orange-soft:#fff3e8;
+      --blue-soft:#eef5fc;
+      --ink:#092548;
+      --text:#3e5168;
+      --muted:#6b7d90;
+      --line:#dbe5ef;
+      --white:#fff;
       --success:#16794c;
       --success-bg:#eaf8f1;
       --radius:16px;
-      --shadow:0 18px 55px rgba(7,31,69,.11);
+      --shadow:0 18px 55px rgba(7,31,69,.10);
     }
 
     *{box-sizing:border-box}
@@ -36,94 +36,95 @@
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     button,input,select,textarea{font:inherit}
-    button,a.btn{transition:.18s ease}
     h1,h2,h3,p{margin-top:0}
-    h1,h2,h3{color:var(--ink);letter-spacing:-.025em}
+    h1,h2,h3{color:var(--ink);letter-spacing:-.035em}
     .wrap{width:min(1160px,calc(100% - 40px));margin:0 auto}
-    .section{padding:86px 0}
-    .section-head{max-width:780px;margin-bottom:38px}
+    .section{padding:82px 0}
+    .section-head{max-width:790px;margin-bottom:36px}
     .kicker{margin:0 0 10px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-    .section h2{margin:0;font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:800}
-    .section-intro{margin:16px 0 0;max-width:760px;font-size:17px;color:var(--muted)}
-    .orange-text{color:var(--orange)!important}
+    .section h2{margin:0;font-size:clamp(31px,4vw,46px);line-height:1.08;font-weight:800}
+    .section-intro{margin:15px 0 0;max-width:760px;font-size:17px;color:var(--muted)}
 
-    /* Header */
     header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid rgba(7,31,69,.08);backdrop-filter:blur(10px)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
     .logo{width:142px;height:auto}
     nav{display:flex;align-items:center;gap:28px}
     nav a{font-size:13px;font-weight:700;color:var(--ink)}
     nav a:hover{color:var(--orange)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--orange);color:#fff;padding:14px 22px;font-size:13px;font-weight:800;letter-spacing:.015em;cursor:pointer;text-align:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--orange);color:#fff;padding:14px 22px;font-size:13px;font-weight:800;letter-spacing:.01em;cursor:pointer;text-align:center;transition:.18s ease}
     .btn:hover{background:var(--orange-dark);transform:translateY(-1px)}
     .btn.small{padding:13px 18px;white-space:nowrap}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff}
-    .btn.ghost:hover{background:rgba(255,255,255,.1)}
+    .btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.72);color:#fff}
+    .btn.ghost:hover{background:rgba(255,255,255,.16)}
     .fullbtn{width:100%;margin-top:18px}
 
-    /* Hero */
-    .hero{position:relative;min-height:590px;display:flex;align-items:center;background:url('assets/hero.jpg') center/cover no-repeat;color:#fff;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,23,53,.96) 0%,rgba(5,23,53,.83) 43%,rgba(5,23,53,.34) 72%,rgba(5,23,53,.12) 100%)}
-    .hero-content{position:relative;z-index:1;padding:76px 0;display:grid;grid-template-columns:minmax(0,670px) 1fr}
-    .hero .eyebrow{margin:0 0 18px;color:var(--orange);font-size:14px;font-weight:800;letter-spacing:.16em}
-    .hero h1{color:#fff;margin:0;font-size:clamp(48px,7vw,76px);line-height:.98;font-weight:800;letter-spacing:-.045em}
+    /* Hero: uses a file that already exists in the project */
+    .hero{position:relative;min-height:610px;display:flex;align-items:center;background:url('assets/onibus.png') center 47%/cover no-repeat;color:#fff;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,23,53,.97) 0%,rgba(5,23,53,.91) 36%,rgba(5,23,53,.60) 58%,rgba(5,23,53,.18) 100%)}
+    .hero-content{position:relative;z-index:1;padding:78px 0;display:grid;grid-template-columns:minmax(0,680px) 1fr}
+    .hero .eyebrow{margin:0 0 16px;color:var(--orange);font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .hero h1{color:#fff;margin:0;font-size:clamp(52px,7vw,78px);line-height:.97;font-weight:800;letter-spacing:-.055em}
     .hero h1 em{font-style:normal;color:var(--orange)}
-    .hero-lead{margin:24px 0 14px;font-size:22px;line-height:1.35;color:#fff;max-width:650px}
-    .hero-copy{font-size:17px;max-width:650px;color:#e4edf7}
-    .vehicle-strip{display:inline-flex;gap:12px;align-items:center;margin:20px 0 0;padding:9px 13px;border:1px solid rgba(255,255,255,.45);border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.04em}
-    .vehicle-strip span{color:var(--orange)}
+    .hero-lead{margin:24px 0 12px;font-size:22px;line-height:1.35;color:#fff;max-width:650px;font-weight:700}
+    .hero-copy{font-size:17px;max-width:650px;color:#e6edf6}
+    .hero-benefit{display:flex;align-items:center;gap:10px;margin-top:20px;color:#fff;font-size:14px;font-weight:700}
+    .hero-benefit::before{content:"✓";display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;font-size:13px}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
-    /* Trust */
-    .trust{background:#fff;border-bottom:1px solid var(--line)}
-    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .trust-item{padding:28px 24px;border-right:1px solid var(--line)}
-    .trust-item:first-child{padding-left:0}
-    .trust-item:last-child{border-right:0;padding-right:0}
-    .trust-item strong{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
-    .trust-item span{font-size:13px;color:var(--muted)}
-    .trust-icon{display:inline-flex;width:27px;height:27px;border-radius:50%;align-items:center;justify-content:center;background:#fff0e5;color:var(--orange);font-weight:800;margin-bottom:10px}
-
-    /* How */
-    #como{background:var(--soft-blue)}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .steps article{background:#fff;border:1px solid rgba(7,31,69,.08);border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(7,31,69,.05)}
-    .step-number{display:flex;width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-bottom:18px}
-    .steps h3{font-size:18px;margin-bottom:8px;font-weight:800}
+    /* Three-step corporate band */
+    #como{background:#fff}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .steps article{border-radius:var(--radius);padding:30px;min-height:220px;border:1px solid var(--line);box-shadow:0 9px 26px rgba(7,31,69,.045)}
+    .steps article:nth-child(1),.steps article:nth-child(3){background:var(--orange-soft);border-color:#ffd8b8}
+    .steps article:nth-child(2){background:#fff}
+    .step-number{display:flex;width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-bottom:20px}
+    .steps h3{font-size:19px;margin-bottom:10px;font-weight:800}
     .steps p{margin:0;color:var(--muted);font-size:14px}
 
-    /* Occasions */
-    .occasions{background:var(--navy);color:#fff}
-    .occasions h2{color:#fff}
-    .occasions .section-intro{color:#cbd8e9}
-    .occasion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .occasion-grid article{padding:24px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
-    .occasion-grid h3{color:#fff;font-size:17px;margin-bottom:8px}
-    .occasion-grid p{margin:0;color:#cbd8e9;font-size:14px}
+    /* Commercial impact */
+    .impact{background:var(--navy);color:#fff}
+    .impact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+    .impact h2{color:#fff;max-width:720px}
+    .impact p{color:#d5e1ef;max-width:720px;font-size:17px}
+    .impact-card{background:var(--orange);border-radius:18px;padding:30px;color:#fff;box-shadow:0 18px 45px rgba(0,0,0,.14)}
+    .impact-card strong{display:block;font-size:24px;line-height:1.2;margin-bottom:12px}
+    .impact-card p{margin:0;color:#fff;font-size:15px}
+    .impact-list{display:grid;gap:12px;margin:24px 0 0;padding:0;list-style:none}
+    .impact-list li{position:relative;padding-left:26px;color:#e6edf6;font-size:14px}
+    .impact-list li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
 
-    /* Vehicles */
+    /* Needs */
+    .needs{background:var(--blue-soft)}
+    .need-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .need-grid article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+    .need-grid h3{font-size:17px;margin-bottom:8px}
+    .need-grid p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Vehicles - one dedicated place only */
     #veiculos{background:#fff}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
     .cards article{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 12px 35px rgba(7,31,69,.06)}
-    .cards img{width:100%;height:220px;object-fit:cover}
-    .cards article div{padding:22px}
-    .cards h3{font-size:18px;margin-bottom:7px}
-    .cards p{margin:0;color:var(--muted);font-size:14px}
+    .cards img{width:100%;height:215px;object-fit:cover}
+    .cards article div{padding:20px 22px}
+    .cards h3{font-size:18px;margin-bottom:6px}
+    .cards p{margin:0;color:var(--muted);font-size:13px}
 
     /* Quote */
     #cotacao{background:linear-gradient(135deg,var(--navy),#0a3466);color:#fff}
     #cotacao h2{color:#fff}
-    #cotacao .quote-copy>p{color:#dbe7f4;font-size:16px}
+    #cotacao .section-intro{color:#dce7f3}
     .two{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:start}
-    .quote-points{margin:25px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+    .quote-copy>p{color:#dce7f3;font-size:16px}
+    .quote-points{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:12px}
     .quote-points li{position:relative;padding-left:25px;color:#e6eef8;font-size:14px}
     .quote-points li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
-    .urgency-note{margin-top:24px;padding:16px 18px;border-radius:12px;background:rgba(255,122,26,.12);border:1px solid rgba(255,122,26,.32);color:#fff;font-size:14px}
-    .urgency-note strong{color:#ffad75}
+    .quote-callout{margin-top:24px;padding:17px 18px;border-radius:12px;background:rgba(255,122,26,.12);border:1px solid rgba(255,122,26,.35);color:#fff;font-size:14px}
+    .quote-callout strong{color:#ffb37d}
 
     /* Forms */
     form{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);color:var(--text)}
-    .form-title{font-size:18px;color:var(--ink);font-weight:800;margin:0 0 20px}
+    .form-title{font-size:20px;color:var(--ink);font-weight:800;margin:0 0 6px}
+    .form-subtitle{font-size:13px;color:var(--muted);margin:0 0 20px}
     .formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     .formgrid label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:800;color:var(--ink)}
     .formgrid .full{grid-column:1/-1}
@@ -132,7 +133,7 @@
     textarea{min-height:96px;resize:vertical}
     input::placeholder,textarea::placeholder{color:#8b98a8}
     .fieldhint{display:block;margin:-2px 0 10px;font-size:12px;color:var(--muted);font-weight:500}
-    .checkgroup{padding:16px;border:1px solid var(--line);background:var(--soft);border-radius:11px}
+    .checkgroup{padding:16px;border:1px solid var(--line);background:#f7f9fc;border-radius:11px}
     .checkgroup>strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
     .checkgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px}
     .checkgrid label{display:flex;flex-direction:row;align-items:center;gap:8px;font-size:13px;font-weight:600}
@@ -145,16 +146,16 @@
     .form-status.error{display:block;background:#fff2f0;color:#a13b2d;border:1px solid #f2c5be}
 
     /* About */
-    #sobre{background:var(--soft)}
+    #sobre{background:#fff}
     .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-    .about-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+    .about-card{background:var(--blue-soft);border:1px solid #d8e6f4;border-radius:14px;padding:24px}
     .about-card strong{display:block;color:var(--ink);font-size:16px;margin-bottom:8px}
     .about-card p{margin:0;color:var(--muted);font-size:14px}
 
     /* Partners */
-    #parceiros{background:#fff}
+    #parceiros{background:var(--blue-soft)}
     .partner{align-items:start}
-    .partner-copy-box{background:var(--soft-blue);border-left:4px solid var(--orange);padding:18px 20px;border-radius:0 12px 12px 0;margin:20px 0}
+    .partner-copy-box{background:#fff;border-left:4px solid var(--orange);padding:18px 20px;border-radius:0 12px 12px 0;margin:20px 0;box-shadow:0 10px 28px rgba(7,31,69,.05)}
     .partner-copy-box strong{display:block;color:var(--ink);font-size:17px;margin-bottom:6px}
     .partner-copy-box span{color:var(--muted);font-size:14px}
     .partner-image{display:grid;gap:16px;position:sticky;top:104px}
@@ -162,36 +163,34 @@
     .minirow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .minirow img{width:100%;height:175px;object-fit:cover;border-radius:14px}
 
-    /* CTA */
-    .cta{position:relative;padding:70px 0;background:url('assets/hero.jpg') center 55%/cover no-repeat;text-align:center;color:#fff}
-    .cta::before{content:"";position:absolute;inset:0;background:rgba(7,31,69,.82)}
-    .cta .wrap{position:relative;z-index:1}
+    /* Final CTA */
+    .cta{background:var(--orange);padding:66px 0;text-align:center;color:#fff}
     .cta h2{color:#fff;font-size:clamp(30px,4vw,44px);margin-bottom:12px}
-    .cta p{color:#dce6f2;max-width:720px;margin:0 auto 24px;font-size:16px}
+    .cta p{color:#fff;max-width:720px;margin:0 auto 24px;font-size:16px}
+    .cta .btn{background:var(--navy)}
+    .cta .btn:hover{background:#04152f}
 
     /* Footer */
     footer{background:#04152f;color:#cbd7e5;padding:48px 0 24px}
-    .foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px;align-items:start}
+    .foot{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:50px;align-items:start}
     .footer-brand img{width:145px;margin-bottom:15px}
     .footer-brand p,.footer-col p{font-size:13px;color:#b8c6d7;margin:0}
+    .footer-brand strong{display:block;color:#fff;font-size:14px;margin-bottom:7px}
     .footer-col b{display:block;color:#fff;font-size:13px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em}
-    .contact-lines{display:grid;gap:8px}
-    .contact-lines a{color:#fff;font-size:13px;font-weight:600}
+    .contact-lines{display:grid;gap:10px}
+    .contact-lines a{display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:600}
     .contact-lines a:hover{color:#ffab6c}
-    .disclaimer{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:#93a4ba}
+    .contact-icon{width:20px;height:20px;flex:0 0 20px;color:var(--orange)}
+    .legal-note{margin-top:16px;font-size:11px;color:#93a4ba;max-width:470px}
     .copy{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:#93a4ba}
-
     .quote-sink{display:none;width:0;height:0;border:0}
 
     @media(max-width:960px){
       nav{display:none}
-      .hero{min-height:auto}
+      .hero{min-height:auto;background-position:center}
       .hero-content{grid-template-columns:1fr}
-      .trust-grid{grid-template-columns:repeat(2,1fr)}
-      .trust-item:nth-child(2){border-right:0}
-      .trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .steps,.cards,.occasion-grid,.about-grid{grid-template-columns:1fr 1fr}
-      .two{grid-template-columns:1fr;gap:34px}
+      .steps,.cards,.need-grid,.about-grid{grid-template-columns:1fr 1fr}
+      .impact-grid,.two{grid-template-columns:1fr;gap:34px}
       .partner-image{position:static}
       .foot{grid-template-columns:1fr 1fr}
     }
@@ -203,12 +202,10 @@
       .btn.small{font-size:11px;padding:11px 12px}
       .hero-content{padding:58px 0}
       .hero h1{font-size:48px}
-      .hero-lead{font-size:18px}
+      .hero-lead{font-size:19px}
       .actions{flex-direction:column;align-items:stretch}
       .actions .btn{width:100%}
-      .trust-grid,.steps,.cards,.occasion-grid,.about-grid,.foot{grid-template-columns:1fr}
-      .trust-item{border-right:0!important;border-bottom:1px solid var(--line);padding:22px 0}
-      .trust-item:last-child{border-bottom:0}
+      .steps,.cards,.need-grid,.about-grid,.foot{grid-template-columns:1fr}
       .formgrid{grid-template-columns:1fr}
       .formgrid .full{grid-column:auto}
       form{padding:20px}
@@ -230,7 +227,7 @@
       <a href="#parceiros">Seja parceiro</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="btn small" href="#" onclick="return abrirWhatsAppCliente()">COTAÇÃO NO WHATSAPP</a>
+    <a class="btn small" href="#cotacao">SOLICITAR COTAÇÃO</a>
   </div>
 </header>
 
@@ -240,23 +237,14 @@
       <div>
         <p class="eyebrow">PLATAFORMA DE FRETAMENTO</p>
         <h1>Seu destino,<br><em>nossa busca.</em></h1>
-        <p class="hero-lead"><strong>Ônibus, micro-ônibus e vans com motorista para sua viagem, em uma única solicitação.</strong></p>
-        <p class="hero-copy">A Fretall conecta sua necessidade de transporte a empresas parceiras especializadas. Você informa a viagem, nós organizamos a busca por opções e acompanhamos o atendimento até os próximos passos.</p>
-        <div class="vehicle-strip">ÔNIBUS <span>•</span> MICRO-ÔNIBUS <span>•</span> VANS EXECUTIVAS</div>
+        <p class="hero-lead">Ônibus, micro-ônibus e vans com motorista para viagens, eventos e empresas — em uma única solicitação.</p>
+        <p class="hero-copy">Você envia os dados da viagem e a Fretall busca empresas parceiras especializadas para reunir opções de orçamento e facilitar sua escolha.</p>
+        <div class="hero-benefit">Economize tempo na busca e compare opções de orçamento.</div>
         <div class="actions">
-          <a class="btn" href="#" onclick="return abrirWhatsAppCliente()">COTAÇÃO PELO WHATSAPP</a>
-          <a class="btn ghost" href="#cotacao">PREENCHER FORMULÁRIO</a>
+          <a class="btn" href="#cotacao">SOLICITAR COTAÇÃO</a>
+          <a class="btn ghost" href="#" onclick="return abrirWhatsAppCliente()">FALAR NO WHATSAPP</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="trust">
-    <div class="wrap trust-grid">
-      <div class="trust-item"><span class="trust-icon">1</span><strong>Uma única solicitação</strong><span>Informe a necessidade uma vez e centralize o atendimento.</span></div>
-      <div class="trust-item"><span class="trust-icon">2</span><strong>Busca entre parceiros</strong><span>A Fretall consulta empresas de acordo com a demanda.</span></div>
-      <div class="trust-item"><span class="trust-icon">3</span><strong>Atendimento humano</strong><span>Você tem suporte para organizar e comparar as opções.</span></div>
-      <div class="trust-item"><span class="trust-icon">4</span><strong>Acompanhamento</strong><span>Seguimos com você durante o processo de cotação.</span></div>
     </div>
   </section>
 
@@ -265,30 +253,59 @@
       <div class="section-head">
         <p class="kicker">SIMPLES DO INÍCIO AO FIM</p>
         <h2>Como a Fretall funciona</h2>
-        <p class="section-intro">Um processo objetivo para você ganhar tempo e receber alternativas sem precisar procurar empresa por empresa.</p>
+        <p class="section-intro">Você envia os dados da viagem uma vez. A Fretall faz a busca e apresenta opções para você comparar.</p>
       </div>
       <div class="steps">
-        <article><span class="step-number">01</span><h3>Envie os dados da viagem</h3><p>Origem, destino, data, horário aproximado e quantidade de passageiros.</p></article>
-        <article><span class="step-number">02</span><h3>A Fretall inicia a busca</h3><p>Consultamos empresas parceiras que podem atender à sua solicitação.</p></article>
-        <article><span class="step-number">03</span><h3>Receba as opções</h3><p>Você analisa as alternativas e decide como seguir. O retorno inicial é de até 24 horas úteis, podendo ocorrer antes.</p></article>
+        <article>
+          <span class="step-number">01</span>
+          <h3>Envie os dados da viagem</h3>
+          <p>Envie origem, destino, data, horário aproximado e quantidade de passageiros.</p>
+        </article>
+        <article>
+          <span class="step-number">02</span>
+          <h3>A Fretall faz a busca</h3>
+          <p>Buscamos empresas parceiras que possam atender ao roteiro, à data e ao perfil da sua viagem.</p>
+        </article>
+        <article>
+          <span class="step-number">03</span>
+          <h3>Você recebe as opções</h3>
+          <p>Compare as alternativas recebidas e escolha a opção que melhor atende à sua viagem.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section occasions">
+  <section class="section impact">
+    <div class="wrap impact-grid">
+      <div>
+        <p class="kicker">ECONOMIZE TEMPO E TENHA MAIS OPÇÕES</p>
+        <h2>Seu tempo vale muito. Sua viagem também.</h2>
+        <p>Sem tempo para cotar em várias empresas? Envie os dados da viagem uma única vez e a Fretall faz a busca entre empresas parceiras.</p>
+        <ul class="impact-list">
+          <li>Economize tempo na busca e cotação.</li>
+          <li>Mais opções para comparar orçamentos.</li>
+          <li>Atendimento humano durante a cotação.</li>
+        </ul>
+      </div>
+      <div class="impact-card">
+        <strong>Uma solicitação. Mais opções para comparar.</strong>
+        <p>A Fretall reúne alternativas de empresas parceiras para tornar sua cotação mais prática e organizada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section needs">
     <div class="wrap">
       <div class="section-head">
-        <p class="kicker">SOLUÇÕES PARA DIFERENTES NECESSIDADES</p>
-        <h2>Fretamento para empresas, grupos e viagens</h2>
-        <p class="section-intro">Da rotina corporativa a uma viagem em grupo, a Fretall ajuda a organizar a busca pelo transporte adequado.</p>
+        <p class="kicker">PARA DIFERENTES NECESSIDADES</p>
+        <h2>Transporte para empresas, eventos, grupos e viagens</h2>
+        <p class="section-intro">Uma única solicitação para diferentes tipos de viagens e deslocamentos de passageiros.</p>
       </div>
-      <div class="occasion-grid">
-        <article><h3>Empresas e eventos</h3><p>Equipes, treinamentos, convenções, eventos e deslocamentos corporativos.</p></article>
-        <article><h3>Viagens e excursões</h3><p>Turismo, passeios, grupos, igrejas e viagens programadas.</p></article>
-        <article><h3>Escolas e faculdades</h3><p>Passeios, visitas técnicas, congressos e atividades acadêmicas.</p></article>
-        <article><h3>Transfers e receptivos</h3><p>Aeroportos, hotéis, eventos e deslocamentos previamente organizados.</p></article>
-        <article><h3>Casamentos e celebrações</h3><p>Transporte de convidados entre hotéis, cerimônias e recepções.</p></article>
-        <article><h3>Particulares e organizadores</h3><p>Famílias, grupos, agências e profissionais que precisam centralizar cotações.</p></article>
+      <div class="need-grid">
+        <article><h3>Empresas e eventos</h3><p>Equipes, treinamentos, convenções e deslocamentos corporativos.</p></article>
+        <article><h3>Viagens e excursões</h3><p>Turismo, grupos, igrejas, passeios e viagens programadas.</p></article>
+        <article><h3>Escolas e faculdades</h3><p>Visitas técnicas, atividades acadêmicas, congressos e passeios.</p></article>
+        <article><h3>Transfers e celebrações</h3><p>Aeroportos, hotéis, casamentos, festas e deslocamentos organizados.</p></article>
       </div>
     </div>
   </section>
@@ -296,14 +313,14 @@
   <section id="veiculos" class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="kicker">FROTA DAS EMPRESAS PARCEIRAS</p>
-        <h2>Opções para diferentes tamanhos de grupo</h2>
-        <p class="section-intro">A necessidade da viagem orienta a busca pelo tipo de veículo e pela empresa parceira responsável pela operação.</p>
+        <p class="kicker">VEÍCULOS</p>
+        <h2>Opções disponíveis com empresas parceiras</h2>
+        <p class="section-intro">A escolha do veículo depende do número de passageiros, do roteiro e das características da viagem.</p>
       </div>
       <div class="cards">
-        <article><img src="assets/onibus-card.png" alt="Ônibus rodoviário"><div><h3>Ônibus rodoviários</h3><p>Indicados para grupos maiores, viagens, eventos e operações corporativas.</p></div></article>
-        <article><img src="assets/micro-card.png" alt="Micro-ônibus"><div><h3>Micro-ônibus</h3><p>Alternativa prática para grupos de médio porte e diferentes roteiros.</p></div></article>
-        <article><img src="assets/van-card.png" alt="Van executiva"><div><h3>Vans executivas</h3><p>Agilidade para grupos menores, equipes, transfers e deslocamentos específicos.</p></div></article>
+        <article><img src="assets/onibus-card.png" alt="Ônibus"><div><h3>Ônibus</h3><p>Para grupos maiores, eventos, empresas e viagens rodoviárias.</p></div></article>
+        <article><img src="assets/micro-card.png" alt="Micro-ônibus"><div><h3>Micro-ônibus</h3><p>Para grupos de médio porte e diferentes tipos de roteiro.</p></div></article>
+        <article><img src="assets/van-card.png" alt="Van"><div><h3>Van</h3><p>Para grupos menores, equipes, transfers e deslocamentos específicos.</p></div></article>
       </div>
     </div>
   </section>
@@ -311,25 +328,25 @@
   <section id="cotacao" class="section">
     <div class="wrap two">
       <div class="quote-copy">
-        <p class="kicker">COTAÇÃO</p>
-        <h2>Informe a viagem. A Fretall organiza a busca.</h2>
-        <p>O formulário foi reduzido ao essencial para você enviar a solicitação com rapidez. Se preferir, fale diretamente pelo WhatsApp.</p>
-        <div class="actions"><a class="btn" href="#" onclick="return abrirWhatsAppCliente()">SOLICITAR PELO WHATSAPP</a></div>
+        <p class="kicker">SOLICITE SUA COTAÇÃO</p>
+        <h2>Solicite sua cotação de fretamento.</h2>
+        <p>Preencha os dados da viagem com atenção. Informações claras ajudam a direcionar a busca e aumentam a assertividade da cotação.</p>
+        <div class="actions"><a class="btn" href="#" onclick="return abrirWhatsAppCliente()">PREFIRO FALAR NO WHATSAPP</a></div>
         <ul class="quote-points">
-          <li>Retorno inicial em até 24 horas úteis, podendo ser antes.</li>
           <li>Horários podem ser aproximados nesta primeira solicitação.</li>
-          <li>Use o campo de prioridade para destacar uma viagem próxima.</li>
-          <li>Acompanhamento humano durante a busca.</li>
+          <li>Informe embarque e destino com o máximo de clareza possível.</li>
+          <li>Use observações para bagagens, acessibilidade, paradas ou necessidades especiais.</li>
+          <li>A Fretall acompanha o atendimento comercial da solicitação.</li>
         </ul>
-        <div class="urgency-note"><strong>Viagem urgente?</strong> Selecione “Urgente” no formulário. Nossa equipe identifica a prioridade assim que a solicitação é recebida.</div>
+        <div class="quote-callout"><strong>Precisa de transporte para sua viagem, evento ou empresa?</strong> Envie os dados principais ao lado e concentre sua cotação em uma única solicitação.</div>
       </div>
 
       <form id="quoteForm" action="https://script.google.com/macros/s/AKfycbyvHIjCc8B4CvIHUjUkbxg_ByuljO25QnNWNn4xq4LryFpUUj1Tk9f8bKCdvGXaY4P9jQ/exec" method="post" target="quoteSink" onsubmit="return prepararCotacao(this)">
         <p class="form-title">Solicite sua cotação</p>
+        <p class="form-subtitle">Preencha os dados principais da viagem. Campos com * são obrigatórios.</p>
         <input type="hidden" name="tipo_formulario" value="cotacao">
         <input type="hidden" name="form_token" value="FRETALL-LANDING-2026-SEGURA">
         <input type="text" name="site_empresa" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
-        <input type="hidden" name="observacoes" id="quoteObservacoesFinal">
 
         <div class="formgrid">
           <label>Nome ou empresa *<input required name="nome" autocomplete="name"></label>
@@ -339,17 +356,9 @@
           <label>Data da ida *<input required type="date" name="data_ida"></label>
           <label>Horário aproximado da ida *<input required type="time" name="horario_ida"></label>
           <label>Passageiros *<input required type="number" min="1" name="passageiros" placeholder="Ex.: 32"></label>
-          <label>Prioridade da cotação *
-            <select required id="quoteUrgencia">
-              <option value="" selected disabled>Selecione</option>
-              <option>Normal — viagem com antecedência</option>
-              <option>Prioridade — preciso de retorno mais rápido</option>
-              <option>Urgente — viagem próxima</option>
-            </select>
-          </label>
           <label>Data de retorno (opcional)<input type="date" name="data_retorno"></label>
           <label>Horário aproximado do retorno (opcional)<input type="time" name="horario_retorno"></label>
-          <label class="full">Observações (opcional)<textarea id="quoteObsLivre" placeholder="Paradas, bagagens, acessibilidade ou outra informação importante."></textarea></label>
+          <label class="full">Observações (opcional)<textarea name="observacoes" placeholder="Paradas, bagagens, acessibilidade ou outra informação importante."></textarea></label>
         </div>
 
         <button id="quoteSubmit" type="submit" class="btn fullbtn">ENVIAR SOLICITAÇÃO</button>
@@ -365,12 +374,12 @@
       <div class="section-head">
         <p class="kicker">SOBRE A FRETALL</p>
         <h2>Experiência no transporte. Uma forma mais simples de buscar fretamento.</h2>
-        <p class="section-intro">A Fretall nasceu da experiência de mais de 15 anos no setor de transporte de passageiros e atua como intermediadora entre clientes e empresas parceiras de fretamento.</p>
+        <p class="section-intro">A Fretall nasceu da experiência de mais de 15 anos no setor de transporte de passageiros para tornar a busca por fretamento mais simples, organizada e prática.</p>
       </div>
       <div class="about-grid">
-        <div class="about-card"><strong>Conhecimento do setor</strong><p>Entendemos as informações essenciais para iniciar uma cotação e organizar a busca com agilidade.</p></div>
-        <div class="about-card"><strong>Intermediação</strong><p>A Fretall não possui frota ou motoristas próprios. O transporte é executado pelas empresas parceiras contratadas.</p></div>
-        <div class="about-card"><strong>Atendimento próximo</strong><p>Acompanhamos a solicitação, a comparação das opções e os próximos passos comerciais.</p></div>
+        <div class="about-card"><strong>Conhecimento do setor</strong><p>Entendemos quais informações realmente importam para iniciar uma cotação com clareza.</p></div>
+        <div class="about-card"><strong>Busca centralizada</strong><p>Você envia os dados da viagem uma vez e a Fretall busca opções entre empresas parceiras especializadas.</p></div>
+        <div class="about-card"><strong>Atendimento próximo</strong><p>Acompanhamos a solicitação e os próximos passos comerciais durante o processo.</p></div>
       </div>
     </div>
   </section>
@@ -379,18 +388,19 @@
     <div class="wrap two partner">
       <div>
         <p class="kicker">PARA EMPRESAS DE FRETAMENTO</p>
-        <h2>Mais oportunidades para sua empresa fechar novas viagens.</h2>
-        <p class="section-intro">Cadastre sua empresa na Fretall e receba novas solicitações de cotação. Você avalia cada oportunidade e decide quais atendimentos fazem sentido para sua operação.</p>
+        <h2>Mais oportunidades para sua empresa de fretamento.</h2>
+        <p class="section-intro">Cadastre sua empresa para participar de novas cotações conforme sua região, frota e disponibilidade. Você decide quais oportunidades quer atender.</p>
 
         <div class="partner-copy-box">
-          <strong>Mais cotações. Mais chances de gerar novos negócios.</strong>
-          <span>O cadastro inicial é simples. A qualificação comercial, operacional e documental pode ser concluída depois com a equipe Fretall.</span>
+          <strong>Novas cotações, com liberdade para escolher quais atender.</strong>
+          <span>Faça um cadastro inicial simples. A equipe Fretall entra em contato quando for necessário avançar na qualificação.</span>
         </div>
 
         <div class="actions"><a class="btn" href="#" onclick="return abrirWhatsAppParceiro()">QUERO SER PARCEIRO PELO WHATSAPP</a></div>
 
         <form id="partnerForm" action="https://script.google.com/macros/s/AKfycbyvHIjCc8B4CvIHUjUkbxg_ByuljO25QnNWNn4xq4LryFpUUj1Tk9f8bKCdvGXaY4P9jQ/exec" method="post" target="partnerSink" onsubmit="return prepararParceiro(this)">
           <p class="form-title">Cadastro inicial de parceiro</p>
+          <p class="form-subtitle">Informe os dados essenciais da empresa. A análise detalhada fica para a próxima etapa.</p>
           <input type="hidden" name="tipo_formulario" value="parceiro">
           <input type="hidden" name="form_token" value="FRETALL-LANDING-2026-SEGURA">
           <input type="hidden" name="estado" value="SP">
@@ -412,7 +422,7 @@
             </label>
             <label>Responsável *<input required name="responsavel"></label>
             <label>WhatsApp *<input required name="whatsapp" inputmode="tel" placeholder="(11) 99999-9999" class="mask-phone"></label>
-            <label>Cidade / base *<input required name="cidade"></label>
+            <label>Cidade *<input required name="cidade" placeholder="Ex.: São Paulo"></label>
             <label>Quantidade de veículos (opcional)<input type="number" min="1" name="quantidade_frota" placeholder="Ex.: 12"></label>
 
             <div class="full checkgroup">
@@ -448,8 +458,8 @@
   <section class="cta">
     <div class="wrap">
       <h2>Uma solicitação. Mais opções para sua viagem.</h2>
-      <p>Conte para a Fretall onde, quando e quantas pessoas vão viajar. Nossa equipe organiza a busca pelas alternativas.</p>
-      <a class="btn" href="#" onclick="return abrirWhatsAppCliente()">SOLICITAR COTAÇÃO PELO WHATSAPP</a>
+      <p>Envie os dados da viagem e deixe a Fretall organizar a busca por alternativas de fretamento.</p>
+      <a class="btn" href="#cotacao">SOLICITAR COTAÇÃO</a>
     </div>
   </section>
 </main>
@@ -458,16 +468,25 @@
   <div class="wrap foot">
     <div class="footer-brand">
       <img src="assets/logo.png" alt="Fretall">
-      <p>Intermediação de serviços de fretamento de ônibus, micro-ônibus e vans.</p>
-      <p class="disclaimer">A Fretall não possui frota ou motoristas próprios. A execução do transporte é realizada pelas empresas parceiras responsáveis pela operação contratada.</p>
+      <strong>Plataforma de fretamento</strong>
+      <p>Conectamos clientes a empresas parceiras especializadas em transporte de passageiros.</p>
+      
     </div>
+
     <div class="footer-col">
       <b>Fale conosco</b>
       <div class="contact-lines">
-        <a href="https://wa.me/5511926391866" target="_blank" rel="noopener">WhatsApp: (11) 92639-1866</a>
-        <a href="mailto:contato@fretall.com.br">contato@fretall.com.br</a>
+        <a href="https://wa.me/5511926391866" target="_blank" rel="noopener" aria-label="WhatsApp Fretall">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.72 9.72 0 0 0-8.3 14.78L2.4 21.68l5.02-1.31A9.73 9.73 0 1 0 12.04 2Zm0 17.68a7.87 7.87 0 0 1-4.01-1.1l-.29-.17-2.98.78.8-2.91-.19-.3a7.9 7.9 0 1 1 6.67 3.7Zm4.33-5.91c-.24-.12-1.41-.69-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.09 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.41-.58 1.61-1.13.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+          <span>WhatsApp: (11) 92639-1866</span>
+        </a>
+        <a href="mailto:contato@fretall.com.br" aria-label="E-mail Fretall">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+          <span>contato@fretall.com.br</span>
+        </a>
       </div>
     </div>
+
     <div class="footer-col">
       <b>Navegação</b>
       <div class="contact-lines">
@@ -495,7 +514,7 @@
   }
 
   function abrirWhatsAppCliente(){
-    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar um orçamento de fretamento.');
+    return abrirWhatsApp_('Olá! Vim pelo site da Fretall e gostaria de solicitar uma cotação de fretamento.');
   }
 
   function abrirWhatsAppParceiro(){
@@ -509,10 +528,7 @@
     el.textContent=mensagem;
   }
 
-  function prepararCotacao(form){
-    const urgencia=document.getElementById('quoteUrgencia').value;
-    const livre=document.getElementById('quoteObsLivre').value.trim();
-    document.getElementById('quoteObservacoesFinal').value='Prioridade da cotação: '+urgencia+(livre?'\nObservações: '+livre:'');
+  function prepararCotacao(){
     const btn=document.getElementById('quoteSubmit');
     btn.disabled=true;
     btn.textContent='ENVIANDO...';
